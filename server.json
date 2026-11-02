@@ -1,0 +1,19 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.tranthor/docs",
+  "title": "Tranthor Docs",
+  "description": "Search the public Tranthor documentation for product guides and API reference.",
+  "version": "1.0.0",
+  "websiteUrl": "https://docs.tranthor.com",
+  "repository": {
+    "url": "https://github.com/tranthor-main/docs",
+    "source": "github",
+    "id": "1187156903"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://docs.tranthor.com/mcp"
+    }
+  ]
+}

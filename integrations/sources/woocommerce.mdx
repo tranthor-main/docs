@@ -1,0 +1,79 @@
+---
+title: "WooCommerce integration"
+description: "Connect a WooCommerce store so Tranthor can use your orders, products, and customers."
+---
+
+WooCommerce is live as a Tranthor commerce data source. Use it to connect a WooCommerce store so Tranthor can work with the store data behind your campaigns.
+
+This page only describes what the public product pages and the existing docs support. Setup details that are not in this repository, and that are not in product code visible while writing this page, are marked **TODO (owner)** instead of guessed.
+
+## How it works
+
+WooCommerce is listed next to Shopify as a commerce source. After you connect a store, Tranthor can use that store's commerce data in your workspace.
+
+<Warning>
+**TODO (owner):** Confirm the connect path from product code before this page goes live. This repository has no WooCommerce plugin, webhook, or dashboard flow. A search of the WordPress.org plugin directory for Tranthor returned no plugin. Do not assume a WordPress plugin, Representational State Transfer (REST) Application Programming Interface (API) keys, or a dashboard sign-in button until the product code says which of those is real.
+</Warning>
+
+The documented Shopify source uses a store app, a Tranthor workspace ID, a write key, and Shopify webhooks into Tranthor's public webhook endpoint. Treat that as the Shopify flow only. Do not copy it onto WooCommerce unless product code matches.
+
+## What syncs
+
+The public Tranthor integrations page marks WooCommerce **Available** and says Tranthor reads **orders**, **products**, and **customers** from the store.
+
+<Note>
+**TODO (owner):** Confirm against product code:
+
+- Whether the first connect backfills historical orders, products, and customers, or only new data after connect
+- Whether updates stream in real time, and through which mechanism (for example webhooks or polling)
+- The exact Tranthor event names created from WooCommerce data
+- Which WooCommerce objects besides orders, products, and customers are in or out of scope
+</Note>
+
+## How to connect
+
+<Warning>
+**TODO (owner):** Replace this section with the real steps from the product. Until then, do not publish guessed clicks, plugin names, REST API key fields, or webhook URLs.
+</Warning>
+
+What you can do today:
+
+1. Create a Tranthor account and open your workspace.
+2. Open **Settings** in the dashboard.
+3. Look for a WooCommerce connect option under data sources or integrations.
+
+If that control is missing, stop and ask Tranthor support rather than wiring the store by hand. Hand-built webhook URLs and event names for WooCommerce are not documented here.
+
+The Shopify docs tell you to paste a workspace ID and a write key into the Shopify app. **TODO (owner):** say whether WooCommerce uses the same two values, different credentials, or a dashboard-only connect.
+
+## Permissions, webhooks, and event names
+
+The Shopify integration page lists required scopes, webhook topics, a webhook URL pattern, Hash-based Message Authentication Code (HMAC) verification, and the event names Tranthor stores.
+
+<Warning>
+**TODO (owner):** Fill the WooCommerce equivalents from product code, or delete these headings if WooCommerce does not use them:
+
+- WordPress / WooCommerce permissions or REST API scopes
+- Webhook topics (order, customer, product, and any privacy topics)
+- Webhook URL format, including whether it includes a workspace ID
+- How Tranthor verifies webhook signatures
+- Event names in Tranthor after ingest
+</Warning>
+
+Do not copy Shopify event names such as `shopify_order_created` onto WooCommerce.
+
+## Troubleshooting
+
+If people or orders do not show up after you connect:
+
+- Confirm the WooCommerce source shows as connected in **Settings**.
+- Confirm Tranthor is actually receiving data. The [frequently asked questions](https://docs.tranthor.com/guide/faq) page says users stay missing when no user events have been sent yet, or when your properties and segments do not match the events you send.
+- If you connected through the dashboard, disconnect and connect again only after you confirm that is a supported step. **TODO (owner):** confirm whether reconnect is safe and whether it duplicates data.
+
+<Note>
+**TODO (owner):** Add the actual error messages, permission failures, and webhook delivery failures from the product, including what the merchant should do in WordPress and in Tranthor.
+</Note>
+
+## Support
+
+If you need help connecting a WooCommerce store, reach out to the Tranthor team through the dashboard support channel, or email [support@tranthor.com](mailto:support@tranthor.com).
